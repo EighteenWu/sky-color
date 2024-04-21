@@ -1,0 +1,27 @@
+POST https://interface.skycolorful.com/api/User/UserPointLog HTTP/1.1
+Host: interface.skycolorful.com
+Connection: keep-alive
+Content-Length: 48
+User-from: xcx
+xweb_xhr: 1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoi57uP5byA5q2j5b6I5bm2IiwianRpIjoiOTI4NzUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL2V4cGlyYXRpb24iOiIwNS8yMS8yMDI0IDIxOjU0OjAyIiwibmJmIjoxNzEzNzA3NjQyLCJleHAiOjE3MTYyOTk2NDIsImlzcyI6IkNvcmVTaG9wUHJvZmVzc2lvbmFsIiwiYXVkIjoiQ29yZUNtcyJ9.hwvMi6RNDZc-eB4nAYXjq--Gqu_1ZAX4Ufi1REKv5lU
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Windows WindowsWechat/WMPF WindowsWechat(0x63090a13) XWEB/9105
+Content-Type: application/json
+Accept: */*
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://servicewechat.com/wx49018277e65fc3e1/51/page-frame.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+{"page":1,"limit":10,"where":"{type: 0,flag:1}"}
+HTTP/1.1 200 OK
+Server: nginx/1.20.1
+Date: Sun, 21 Apr 2024 13:59:17 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000
+Content-Length: 2475
+
+{"methodDescription":null,"otherData":null,"status":true,"msg":"接口响应成功","data":{"data":[{"id":2049076,"userId":92875,"type":21,"num":3,"balance":607,"multiple":1.0,"multipleType":0,"remarks":"文章id748152","createTime":"2024-04-21 21:58:33","expireTime":"2026-04-21 21:58:33","flag":1,"typeName":"社区内容点赞"},{"id":2049075,"userId":92875,"type":21,"num":3,"balance":604,"multiple":1.0,"multipleType":0,"remarks":"文章id748151","createTime":"2024-04-21 21:58:23","expireTime":"2026-04-21 21:58:23","flag":1,"typeName":"社区内容点赞"},{"id":2049074,"userId":92875,"type":21,"num":3,"balance":601,"multiple":1.0,"multipleType":0,"remarks":"文章id748150","createTime":"2024-04-21 21:58:18","expireTime":"2026-04-21 21:58:18","flag":1,"typeName":"社区内容点赞"},{"id":2049073,"userId":92875,"type":21,"num":3,"balance":598,"multiple":1.0,"multipleType":0,"remarks":"文章id748149","createTime":"2024-04-21 21:58:08","expireTime":"2026-04-21 21:58:08","flag":1,"typeName":"社区内容点赞"},{"id":2049055,"userId":92875,"type":21,"num":3,"balance":595,"multiple":1.0,"multipleType":0,"remarks":"文章id748106","createTime":"2024-04-21 21:53:26","expireTime":"2026-04-21 21:53:26","flag":1,"typeName":"社区内容点赞"},{"id":2049053,"userId":92875,"type":11,"num":10,"balance":592,"multiple":1.0,"multipleType":0,"remarks":"评论id412311","createTime":"2024-04-21 21:52:35","expireTime":"2026-04-21 21:52:35","flag":1,"typeName":"社区内容评论"},{"id":2049051,"userId":92875,"type":11,"num":10,"balance":582,"multiple":1.0,"multipleType":0,"remarks":"评论id412310","createTime":"2024-04-21 21:52:26","expireTime":"2026-04-21 21:52:26","flag":1,"typeName":"社区内容评论"},{"id":2049048,"userId":92875,"type":11,"num":10,"balance":572,"multiple":1.0,"multipleType":0,"remarks":"评论id412309","createTime":"2024-04-21 21:52:05","expireTime":"2026-04-21 21:52:05","flag":1,"typeName":"社区内容评论"},{"id":2048865,"userId":92875,"type":25,"num":5,"balance":562,"multiple":1.0,"multipleType":0,"remarks":"18351","createTime":"2024-04-21 21:15:44","expireTime":"2026-04-21 21:15:44","flag":1,"typeName":"浏览帖子"},{"id":2048864,"userId":92875,"type":25,"num":5,"balance":557,"multiple":1.0,"multipleType":0,"remarks":"20448","createTime":"2024-04-21 21:15:04","expireTime":"2026-04-21 21:15:04","flag":1,"typeName":"浏览帖子"}],"totalCount":35,"totalPages":4},"code":0,"url":null,"uploaded":0,"fileName":null}
