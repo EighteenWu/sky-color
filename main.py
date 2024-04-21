@@ -163,19 +163,22 @@ def daily_task():
     每日任务
     :return:
     """
+    # 更新ids
+    query_post()
     # 获取post_ids内容
     post_ids = json.loads(read_file(POST_IDS_FILE))
     comment_contents = read_file(COMMENT_FILE, 'utf-8')
     comment_contents = [comment for comment in comment_contents.split('\n')]
     # 浏览帖子+积分获取
-    # post_view_result = post_details(2, post_ids)
+    post_view_result = post_details(2, post_ids)
     # 随机回复3帖子
-    # post_comment_result = post_comment(3, comment_contents, post_ids)
+    post_comment_result = post_comment(3, comment_contents, post_ids)
     # 随机点赞帖子5次
-    # post_like_result = post_like(5, post_ids)
-    # return post_like_result
-    user_point_result = user_point_log()
-    print(user_point_result)
+    post_like_result = post_like(5, post_ids)
+    # user_point_result = user_point_log()
+    print(post_view_result + '\n' +
+          post_like_result + '\b' +
+          post_comment_result)
 
 
 if __name__ == '__main__':
