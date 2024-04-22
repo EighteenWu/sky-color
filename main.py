@@ -4,6 +4,7 @@ import requests
 from jsonpath import jsonpath
 from datetime import datetime
 import json
+from MsgBot import WxComBot
 
 SIGN_URL = 'https://interface.skycolorful.com/api/User/Sign'
 GET_POST_URL = 'https://interface.skycolorful.com/api/Article/GetArticlePage'
@@ -185,12 +186,10 @@ def daily_task():
     post_like_result = post_like(5, post_ids)
     # 获取当前积分记录信息
     user_point_result = user_point_log()
-
-    print(post_view_result + '\n' +
-          post_like_result + '\n' +
-          post_comment_result + '\n' +
-          sign_result + '\n' +
-          user_point_result)
+    wx_msg = f"{post_view_result}'\n'{post_like_result} + '\n'{post_comment_result} + '\n'{sign_result} + '\n' {user_point_result} "
+    print(user_point_result)
+    wx_com_bot = WxComBot('ww85eb6097649bfa4d', '_uQAPvqzla0FMlPx-QZS0jFFQ8AUWQ3J8H8o86ysSPQ')
+    wx_com_bot.send_msg_text('1000002', "sky-color-sign" + user_point_result, 'WuDingKang')
 
 
 if __name__ == '__main__':
