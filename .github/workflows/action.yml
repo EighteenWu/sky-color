@@ -2,11 +2,11 @@ name: sky-color
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 每天的UTC时间的午夜触发
+    - cron: '0 9 * * *' # 每天的UTC时间的午夜触发
   workflow_dispatch:
 
 jobs:
-  random_execution:
+  sky-color:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python
