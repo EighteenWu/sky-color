@@ -1,24 +1,24 @@
-name: sky-color
+name: Daily Random Execution
 
 on:
   schedule:
-    - cron: '0 9 * * *' # 每天的UTC时间的午夜触发
-  workflow_dispatch:
+    - cron: '0 0 * * *' # 每天的UTC时间的午夜触发
 
 jobs:
-  sky-color:
+  random_execution:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python
+        uses: EighteenWu/sky-color@main
         with:
           python-version: '3.11'
 
-#      - name: Generate random delay
-#        id: random_delay
-#        run: echo "::set-output name=delay::$((RANDOM % 1440))" # 在一天中的分钟数范围内生成随机数
-#
-#      - name: Wait for random delay
-#        run: sleep ${{ steps.random_delay.outputs.delay }}m
+      - name: Generate random delay
+        id: random_delay
+        run: echo "::set-output name=delay::$((RANDOM % 1440))" # 在一天中的分钟数范围内生成随机数
+
+      - name: Wait for random delay
+        run: sleep ${{ steps.random_delay.outputs.delay }}m
 
       - name: Install dependencies
         run: |
@@ -26,6 +26,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Execute Python Script
-        run: python main.py
+        run: python your_script.py
         env:
           Token: ${{ secrets.TOKEN }}
+          
