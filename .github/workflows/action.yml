@@ -3,6 +3,7 @@ name: sky color sign
 on:
   schedule:
     - cron: '0 0 * * *' # 每天的UTC时间的午夜触发
+  workflow_dispatch:
 
 jobs:
   sky-color-sign:
