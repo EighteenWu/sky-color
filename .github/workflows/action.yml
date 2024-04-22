@@ -14,12 +14,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Generate random delay
-        id: random_delay
-        run: echo "::set-output name=delay::$((RANDOM % 1440))" # 在一天中的分钟数范围内生成随机数
-
-      - name: Wait for random delay
-        run: sleep ${{ steps.random_delay.outputs.delay }}m
+#      - name: Generate random delay
+#        id: random_delay
+#        run: echo "::set-output name=delay::$((RANDOM % 1440))" # 在一天中的分钟数范围内生成随机数
+#
+#      - name: Wait for random delay
+#        run: sleep ${{ steps.random_delay.outputs.delay }}m
 
       - name: Install dependencies
         run: |
@@ -27,6 +27,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: Execute Python Script
-        run: python your_script.py
+        run: python main.py
         env:
           Token: ${{ secrets.TOKEN }}
