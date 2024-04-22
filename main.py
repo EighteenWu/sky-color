@@ -1,9 +1,9 @@
 import random
 import time
-import json
 import requests
 from jsonpath import jsonpath
 from datetime import datetime
+import json
 
 SIGN_URL = 'https://interface.skycolorful.com/api/User/Sign'
 GET_POST_URL = 'https://interface.skycolorful.com/api/Article/GetArticlePage'
@@ -116,6 +116,9 @@ def post_like(list_count, post_ids):
     for _ in range(list_count):
         j = random.randrange(0, len(post_ids))
         data["id"] = post_ids[j]
+        data["data"] = False
+        response = request_url(POST_LIKE_URL, headers=headers, data=data, task_name='帖子点赞')
+        data["data"] = True
         response = request_url(POST_LIKE_URL, headers=headers, data=data, task_name='帖子点赞')
         time.sleep(random.randint(5, 10))
     return '每日点赞任务成功~'
@@ -135,18 +138,21 @@ def user_point_log():
         "page": 1,
         "limit": 15,
         "where":
-            "{type: 0,flag:1}"
+            "{type: 1,flag:1}"
     }
     response = request_url(USER_POINT_LOG, headers=headers, data=data, task_name='积分获取记录')
     curr_date = datetime.now().strftime("%Y-%m-%d")
-    print(curr_date)
+    # print(curr_date)
     # $..children[?(@.role=="group")]
-    nums = jsonpath(response, f"$..num[?(@.createTime.startsWith('{curr_date}'))]")
+    # print(response['data']['data'])
+    # jsonpath提取不到的情况下可以考虑手写路径
+    nums = [item['num'] for item in response['data']['data'] if item['createTime'].startswith(f'{curr_date}')]
+    # print(nums)
     if not nums or isinstance(nums, bool):
         return '获取详细积分失败~'
     else:
         total_nums = sum(nums)
-    return f'今天获取的积分为{total_nums},应获取积分为53'
+    return f'今天获取的积分为{total_nums},应获取积分为58'
 
 
 def post_browse(data):
@@ -169,16 +175,22 @@ def daily_task():
     post_ids = json.loads(read_file(POST_IDS_FILE))
     comment_contents = read_file(COMMENT_FILE, 'utf-8')
     comment_contents = [comment for comment in comment_contents.split('\n')]
+    # 每日签到一次
+    sign_result = sky_sign()
     # 浏览帖子+积分获取
     post_view_result = post_details(2, post_ids)
     # 随机回复3帖子
     post_comment_result = post_comment(3, comment_contents, post_ids)
     # 随机点赞帖子5次
     post_like_result = post_like(5, post_ids)
-    # user_point_result = user_point_log()
+    # 获取当前积分记录信息
+    user_point_result = user_point_log()
+
     print(post_view_result + '\n' +
-          post_like_result + '\b' +
-          post_comment_result)
+          post_like_result + '\n' +
+          post_comment_result + '\n' +
+          sign_result + '\n' +
+          user_point_result)
 
 
 if __name__ == '__main__':
