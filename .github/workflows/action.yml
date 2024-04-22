@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python
-        uses: EighteenWu/sky-color@main
         with:
           python-version: '3.11'
 
