@@ -1,11 +1,11 @@
-name: Daily Random Execution
+name: sky color sign
 
 on:
   schedule:
     - cron: '0 0 * * *' # 每天的UTC时间的午夜触发
 
 jobs:
-  random_execution:
+  sky-color-sign:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python
