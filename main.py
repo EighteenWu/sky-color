@@ -16,7 +16,8 @@ USER_INFO_URL = 'https://interface.skycolorful.com/Api/User/GetUserInfo'
 POST_BROWSER_URL = 'https://interface.skycolorful.com/api/Article/IncreArticlePoint'
 USER_POINT_LOG = 'https://interface.skycolorful.com/api/User/UserPointLog'
 
-TOKEN = os.environ["TOKEN"]
+#os.environ.setdefault('TOKEN', "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoi57uP5byA5q2j5b6I5bm2IiwianRpIjoiOTI4NzUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL2V4cGlyYXRpb24iOiIwNS8yMC8yMDI0IDA5OjQ2OjQ2IiwibmJmIjoxNzEzNTc3NjA2LCJleHAiOjE3MTYxNjk2MDYsImlzcyI6IkNvcmVTaG9wUHJvZmVzc2lvbmFsIiwiYXVkIjoiQ29yZUNtcyJ9.G4ou71kLGu3q2chrrz8iBaLFYhjdYOS8b9S7hsayFZU")
+TOKEN = os.environ['TOKEN']
 print(TOKEN)
 POST_IDS_FILE = 'static/post_id.json'
 COMMENT_FILE = 'static/comment.txt'
@@ -50,7 +51,8 @@ def read_file(file_name, encoding='gbk'):
 def request_url(url, headers, data=None, task_name=''):
     response = requests.post(url, headers=headers, json=data)
     if 200 != response.status_code and response.json()['code'] != 0:
-        raise f"{task_name}任务访问失败{response.json()}"
+        raise BaseException(f"{task_name}任务访问失败{response.json()}'\n'"
+                            f"{TOKEN}")
     return response.json()
 
 
