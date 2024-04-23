@@ -51,8 +51,7 @@ def read_file(file_name, encoding='gbk'):
 def request_url(url, headers, data=None, task_name=''):
     response = requests.post(url, headers=headers, json=data)
     if 200 != response.status_code and response.json()['code'] != 0:
-        raise BaseException(f"{task_name}任务访问失败{response.json()}'\n'"
-                            f"{TOKEN}")
+        raise BaseException(f"{task_name}任务访问失败{response.json()}用户token{TOKEN}")
     return response.json()
 
 
