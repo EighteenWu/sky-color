@@ -16,7 +16,7 @@ USER_INFO_URL = 'https://interface.skycolorful.com/Api/User/GetUserInfo'
 POST_BROWSER_URL = 'https://interface.skycolorful.com/api/Article/IncreArticlePoint'
 USER_POINT_LOG = 'https://interface.skycolorful.com/api/User/UserPointLog'
 
-TOKEN = os.environ.get('TOKEN')
+TOKEN = os.environ["TOKEN"]
 POST_IDS_FILE = 'static/post_id.json'
 COMMENT_FILE = 'static/comment.txt'
 
