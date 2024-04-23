@@ -29,6 +29,6 @@ jobs:
         run: echo ${{ secrets.TOKEN }}
       - name: sky color
         env:
-          TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.TO.TOKEN }}
         run: |
           python3 ./main.py
