@@ -28,7 +28,5 @@ jobs:
       - name: Use a repository secret
         run: echo ${{ secrets.TOKEN }}
       - name: sky color
-        env:
-          TOKEN: ${{ secrets.TO.TOKEN }}
         run: |
           python3 ./main.py
