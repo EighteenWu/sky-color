@@ -1,12 +1,9 @@
 
 #工作名字
-name: glados-checkin
+name: sky-color
 #
 on:
   workflow_dispatch:
-  pull_request:
-  #只运行特定分支master
-    branches: [ main ]
   schedule:
     - cron:  0 09 * * *
 
@@ -20,6 +17,7 @@ jobs:
 #库签出到运行器上的操作，允许您对代码（如生成和测试工具）运行脚本或其他操
 #作。 每当工作流程将针对存储库的代码运行时，都应使用签出操作。
     - name: Use a repository secret
+      use: EighteenWu/sky-color@main
       with:
         token: ${{ secrets.TOKEN }}
       run: echo ${{ secrets.TOKEN }}
