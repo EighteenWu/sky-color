@@ -10,12 +10,8 @@ jobs:
   #将工作流程中运行的所有作业组合在一起
   sky-color:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      #uses 关键字指定此步骤将运行 actions/checkout 操作的 v3。 这是一个将存储
-      #库签出到运行器上的操作，允许您对代码（如生成和测试工具）运行脚本或其他操
-      #作。 每当工作流程将针对存储库的代码运行时，都应使用签出操作。
-
+      - name: Use a repository secret
+        run: echo ${{ secrets.TOKEN }}
       - name: Set up Python 3.11
         uses: actions/setup-python@v2
         with:
