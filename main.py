@@ -16,7 +16,6 @@ USER_INFO_URL = 'https://interface.skycolorful.com/Api/User/GetUserInfo'
 POST_BROWSER_URL = 'https://interface.skycolorful.com/api/Article/IncreArticlePoint'
 USER_POINT_LOG = 'https://interface.skycolorful.com/api/User/UserPointLog'
 
-# os.environ.setdefault('token', "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoi57uP5byA5q2j5b6I5bm2IiwianRpIjoiOTI4NzUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL2V4cGlyYXRpb24iOiIwNS8yMC8yMDI0IDA5OjQ2OjQ2IiwibmJmIjoxNzEzNTc3NjA2LCJleHAiOjE3MTYxNjk2MDYsImlzcyI6IkNvcmVTaG9wUHJvZmVzc2lvbmFsIiwiYXVkIjoiQ29yZUNtcyJ9.G4ou71kLGu3q2chrrz8iBaLFYhjdYOS8b9S7hsayFZU")
 TOKEN = os.environ.get('token')
 print(TOKEN)
 POST_IDS_FILE = 'static/post_id.json'
@@ -151,12 +150,13 @@ def user_point_log():
     # print(response['data']['data'])
     # jsonpath提取不到的情况下可以考虑手写路径
     nums = [item['num'] for item in response['data']['data'] if item['createTime'].startswith(f'{curr_date}')]
+    user_point = jsonpath(response, '$..balance')
     # print(nums)
     if not nums or isinstance(nums, bool):
         return '获取详细积分失败~'
     else:
         total_nums = sum(nums)
-    return f'今天获取的积分为{total_nums},应获取积分为58'
+    return f'今天获取的积分为{total_nums},应获取积分为58,个人积分累计为:{user_point[0]}'
 
 
 def post_browse(data):

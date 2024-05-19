@@ -5,7 +5,7 @@ name: sky-color
 on:
   workflow_dispatch:
   schedule:
-    - cron:  0 09 * * *
+    - cron:  0 00 * * *
 
 jobs:
 #将工作流程中运行的所有作业组合在一起
