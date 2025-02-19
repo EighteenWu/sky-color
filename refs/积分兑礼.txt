@@ -1,0 +1,44 @@
+GET https://shop.skycolorful.com/api/PointExchange/GetPointExchange?Page=1&Limit=10&GradeId=6 HTTP/1.1
+Host: shop.skycolorful.com
+Connection: keep-alive
+version: 2.0.0
+User-from: xcx
+AppSecret: MmI1YzAxZmItNzY0MC00MDFhLTgxODgtNDNhMTMxOTBhNjI2
+source: Wx
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZGtvbjk3OSIsImp0aSI6IjkyODc1IiwiZXhwIjoxNzM5ODUyNzcyLCJpc3MiOiJkZWQzNTM5My1lOTBmLTQ0OGQtOGVhMy04Y2EyNGZiMjI1OTQiLCJhdWQiOiJlMzAzOTZlMy0wOGRiLTRkNmUtYWVkNi02ZTRmMWFhYTQ5ZGUifQ.s2eqNH0VDfmTkRtUccxFV_045dHOtt_IcSqcv9VHJSk
+requestId: f62c1f73-1c84-4456-ba06-2f7865dbfd9c
+Content-Type: application/json
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Windows WindowsWechat/WMPF WindowsWechat(0x63090c2d)XWEB/11581
+xweb_xhr: 1
+UcSource: 30
+X-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZGtvbjk3OSIsImp0aSI6IjkyODc1IiwiZXhwIjoxNzQwNDUwMzcyLCJpc3MiOiJkZWQzNTM5My1lOTBmLTQ0OGQtOGVhMy04Y2EyNGZiMjI1OTQiLCJhdWQiOiJlMzAzOTZlMy0wOGRiLTRkNmUtYWVkNi02ZTRmMWFhYTQ5ZGUifQ.K_kVpSRomUDZxIWkQF_aosqexuqD1a2kPJNjlOgHTDs
+AppId: 815d8026-9a52-4445-a42c-a5443134232e
+Sign: bbfcc3b5cfb318fc447d4add4eff6458
+Ticks: 1739851405888
+Accept: */*
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://servicewechat.com/wx49018277e65fc3e1/72/page-frame.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+
+HTTP/1.1 200 OK
+Server: Tengine
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Vary: Accept-Encoding
+Set-Cookie: acw_tc=d35bf19e17398512841961138eb64885207142264674cbfd3c0cc60d2d;path=/;HttpOnly;Max-Age=3600
+Set-Cookie: cdn_sec_tc=d35bf19e17398512841961138eb64885207142264674cbfd3c0cc60d2d;path=/;HttpOnly;Max-Age=3600
+Date: Tue, 18 Feb 2025 04:01:24 GMT
+X-Rate-Limit-Limit: 7d
+X-Rate-Limit-Remaining: 999959
+X-Rate-Limit-Reset: 2025-02-19T08:32:15.5891460Z
+Strict-Transport-Security: max-age=31536000
+Via: cache54.l2so158-1[22,0], kunlun10.cn1182[42,0]
+Timing-Allow-Origin: *
+EagleId: d35bf19e17398512841961138e
+Content-Length: 2266
+
+{"Data":{"DataList":[{"Id":8641,"Name":"Lossless Scaling（当天联系商城客服）","Image":"https://oss.skycolorful.com/yimishop/20250213/20250213091912_3310.jpg","StartTime":"2025-02-13 00:00:00","EndTime":"2025-02-16 00:00:00","Stock":0,"NeedScore":3499,"SpesDesc":"","GlobalStatus":2,"GlobalStatusDescription":"活动结束"},{"Id":8640,"Name":"真人快打11（当天联系商城客服）","Image":"https://oss.skycolorful.com/yimishop/20250213/20250213091802_7915.jpg","StartTime":"2025-02-13 00:00:00","EndTime":"2025-02-16 00:00:00","Stock":0,"NeedScore":2499,"SpesDesc":"","GlobalStatus":2,"GlobalStatusDescription":"活动结束"},{"Id":8637,"Name":"“i”玩大礼包（购买50系显卡兑换超值）","Image":"https://oss.skycolorful.com/yimishop/20250206/20250206163854_6477.jpg","StartTime":"2025-02-06 00:00:00","EndTime":"2026-02-05 00:00:00","Stock":0,"NeedScore":10999,"SpesDesc":"","GlobalStatus":5,"GlobalStatusDescription":"积分不足"},{"Id":8636,"Name":"CVN 开放定制平台（推荐使用M-ATX主板）","Image":"https://oss.skycolorful.com/yimishop/20250207/20250207101757_1147.png","StartTime":"2025-02-07 00:00:00","EndTime":"2025-02-14 00:00:00","Stock":0,"NeedScore":8399,"SpesDesc":"","GlobalStatus":2,"GlobalStatusDescription":"活动结束"},{"Id":8632,"Name":"MEOW橘宝公仔","Image":"https://oss.skycolorful.com/yimishop/20250117/20250117151643_5764.png","StartTime":"2025-01-10 00:00:00","EndTime":"2026-01-10 00:00:00","Stock":0,"NeedScore":8199,"SpesDesc":"","GlobalStatus":5,"GlobalStatusDescription":"积分不足"},{"Id":8631,"Name":"MEOW 橘宝帆布袋","Image":"https://oss.skycolorful.com/yimishop/20250108/20250108161208_7514.png","StartTime":"2025-01-10 00:00:00","EndTime":"2026-01-10 00:00:00","Stock":0,"NeedScore":4799,"SpesDesc":"","GlobalStatus":0,"GlobalStatusDescription":"立即兑换"},{"Id":8630,"Name":"iGame 柒小希IP鼠标垫","Image":"https://oss.skycolorful.com/yimishop/20250117/20250117162237_7906.png","StartTime":"2025-01-10 00:00:00","EndTime":"2026-01-10 00:00:00","Stock":0,"NeedScore":4599,"SpesDesc":"","GlobalStatus":0,"GlobalStatusDescription":"立即兑换"}],"PageTotal":0,"Total":7,"OtherData":null},"Code":0,"Message":"获取成功","Success":true,"Timestamp":1739851284363}

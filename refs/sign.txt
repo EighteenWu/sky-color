@@ -1,0 +1,45 @@
+POST https://shop.skycolorful.com/api/User/SignV2 HTTP/1.1
+Host: shop.skycolorful.com
+Connection: keep-alive
+Content-Length: 2
+version: 2.0.0
+User-from: xcx
+AppSecret: MmI1YzAxZmItNzY0MC00MDFhLTgxODgtNDNhMTMxOTBhNjI2
+source: Wx
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZGtvbjk3OSIsImp0aSI6IjkyODc1IiwiZXhwIjoxNzM5OTQyNjY0LCJpc3MiOiJkZWQzNTM5My1lOTBmLTQ0OGQtOGVhMy04Y2EyNGZiMjI1OTQiLCJhdWQiOlsiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIiwiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIiwiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIl19.uMutkshi_x2EHdeYTMjlHmUG7eRa9Jm_lEd957Xk1-E
+requestId: e14d3c02-be67-473c-808e-ac1ec9388746
+Content-Type: application/json
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Windows WindowsWechat/WMPF WindowsWechat(0x63090c2d)XWEB/13307
+xweb_xhr: 1
+UcSource: 30
+X-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZGtvbjk3OSIsImp0aSI6IjkyODc1IiwiZXhwIjoxNzQwNTQwMjY0LCJpc3MiOiJkZWQzNTM5My1lOTBmLTQ0OGQtOGVhMy04Y2EyNGZiMjI1OTQiLCJhdWQiOlsiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIiwiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIiwiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIiwiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIl19.Y6tyNx9qJBztDQPxL6Wq1V6wxVQ_Dlbe7rY0iZ42Q3g
+AppId: 815d8026-9a52-4445-a42c-a5443134232e
+Sign: 78ffa269635fd15a8efecf3abf4bc3f5
+Ticks: 1739935605544
+Accept: */*
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://servicewechat.com/wx49018277e65fc3e1/72/page-frame.html
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+
+{}
+HTTP/1.1 200 OK
+Server: Tengine
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Vary: Accept-Encoding
+Set-Cookie: acw_tc=d35bf19617399354830655655e6cc8d1b8ac64d569ea9dd92a77e073a9;path=/;HttpOnly;Max-Age=3600
+Set-Cookie: cdn_sec_tc=d35bf19617399354830655655e6cc8d1b8ac64d569ea9dd92a77e073a9;path=/;HttpOnly;Max-Age=3600
+Date: Wed, 19 Feb 2025 03:24:43 GMT
+X-Rate-Limit-Limit: 7d
+X-Rate-Limit-Remaining: 999917
+X-Rate-Limit-Reset: 2025-02-19T03:45:34.1053356Z
+Strict-Transport-Security: max-age=31536000
+Via: cache73.l2so158-1[9,0], kunlun2.cn1182[31,0]
+Timing-Allow-Origin: *
+EagleId: d35bf19617399354830655655e
+Content-Length: 76
+
+{"Code":0," ":"签到成功","Success":true,"Timestamp":1739935483007}
