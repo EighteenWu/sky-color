@@ -20,7 +20,6 @@ corp_id = os.environ.get('corp_id')
 corp_secret = os.environ.get('corp_secret')
 corp_user = os.environ.get('corp_user')
 
-
 TICKS = ticks = str(int(time.time() * 1000))
 print(TOKEN)
 POST_IDS_FILE = 'static/post_id.json'
@@ -129,7 +128,7 @@ def daily_task():
     :return:
     """
     # 更新ids
-    thursday_exchange()
+    goods_info = thursday_exchange()
     query_post()
     # 获取post_ids内容
     with open(POST_IDS_FILE, 'r', encoding='utf-8') as file:
@@ -139,7 +138,7 @@ def daily_task():
     sign_result = sky_sign()
     post_like_result = post_like(5, post_ids)
     user_point_result = user_info()
-    wx_msg = f"'\n'{post_like_result}  + '\n'{sign_result} + '\n' {user_point_result} "
+    wx_msg = f"'\n'{post_like_result} '\n'{sign_result} '\n' {user_point_result} '\n'  {goods_info} "
     wx_com_bot = WxComBot(corp_id, corp_secret)
     wx_com_bot.send_msg_text('1000002', "sky-color-sign" + wx_msg, corp_user)
 

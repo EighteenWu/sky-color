@@ -4,7 +4,7 @@ name: sky-color
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 00 * * *
+    - cron: 0 03 * * *
 
 jobs:
   #将工作流程中运行的所有作业组合在一起
@@ -29,7 +29,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
           xtoken: ${{ secrets.XTOKEN}}
           appid: ${{ secrets.APPID }}
-          sign: ${{ secrets.sign }}
+          sign: ${{ secrets.SIGN }}
           corp_id: ${{ secrets.COPR_ID }}
           corp_secret: ${{ secrets.SECRET }}
           corp_user: ${{ secrets.USER }}
