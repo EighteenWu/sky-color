@@ -3,6 +3,7 @@ import time, datetime
 import requests
 from jsonpath import jsonpath
 from MsgBot import WxComBot
+import os
 
 SIGN_URL = 'https://shop.skycolorful.com/api/User/SignV2'
 GET_POST_URL = 'https://shop.skycolorful.com/api/Bbs/GetPostingList?Page=1&Size=10&ModuleId=%20%20%20%20&IsNewest=true&IsEssence=false'
@@ -10,11 +11,16 @@ POST_LIKE_URL = 'https://shop.skycolorful.com/api/Bbs/Like'
 USER_INFO_URL = 'https://shop.skycolorful.com/api/User/GetUserInfo'
 SHOP_URL = 'https://shop.skycolorful.com/api/PointExchange/GetPointExchange?Page=1&Limit=10&GradeId=6'
 
-# TOKEN = os.environ.get('token')
-XTOKEN = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZGtvbjk3OSIsImp0aSI6IjkyODc1IiwiZXhwIjoxNzQwNTQwMjY0LCJpc3MiOiJkZWQzNTM5My1lOTBmLTQ0OGQtOGVhMy04Y2EyNGZiMjI1OTQiLCJhdWQiOlsiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIiwiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIiwiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIiwiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIl19.Y6tyNx9qJBztDQPxL6Wq1V6wxVQ_Dlbe7rY0iZ42Q3g'
-TOKEN = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZGtvbjk3OSIsImp0aSI6IjkyODc1IiwiZXhwIjoxNzM5OTQyNjY0LCJpc3MiOiJkZWQzNTM5My1lOTBmLTQ0OGQtOGVhMy04Y2EyNGZiMjI1OTQiLCJhdWQiOlsiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIiwiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIiwiZTMwMzk2ZTMtMDhkYi00ZDZlLWFlZDYtNmU0ZjFhYWE0OWRlIl19.uMutkshi_x2EHdeYTMjlHmUG7eRa9Jm_lEd957Xk1-E'
-APPID = '815d8026-9a52-4445-a42c-a5443134232e'
-SIGN = '78ffa269635fd15a8efecf3abf4bc3f5'
+TOKEN = os.environ.get('token')
+XTOKEN = os.environ.get('xtoken')
+APPID = os.environ.get('appid')
+SIGN = os.environ.get('sign')
+
+corp_id = os.environ.get('corp_id')
+corp_secret = os.environ.get('corp_secret')
+corp_user = os.environ.get('corp_user')
+
+
 TICKS = ticks = str(int(time.time() * 1000))
 print(TOKEN)
 POST_IDS_FILE = 'static/post_id.json'
@@ -117,7 +123,6 @@ def thursday_exchange():
         return goods_name
 
 
-
 def daily_task():
     """
     每日任务
@@ -125,18 +130,18 @@ def daily_task():
     """
     # 更新ids
     thursday_exchange()
-    # query_post()
-    # # 获取post_ids内容
-    # with open(POST_IDS_FILE, 'r', encoding='utf-8') as file:
-    #     post_ids = file.read()
-    # print(post_ids)
-    # # 每日签到一次
-    # sign_result = sky_sign()
-    # post_like_result = post_like(5, post_ids)
-    # user_point_result = user_info()
-    # wx_msg = f"'\n'{post_like_result}  + '\n'{sign_result} + '\n' {user_point_result} "
-    # wx_com_bot = WxComBot('ww85eb6097649bfa4d', '_uQAPvqzla0FMlPx-QZS0jFFQ8AUWQ3J8H8o86ysSPQ')
-    # wx_com_bot.send_msg_text('1000002', "sky-color-sign" + wx_msg, 'WuDingKang')
+    query_post()
+    # 获取post_ids内容
+    with open(POST_IDS_FILE, 'r', encoding='utf-8') as file:
+        post_ids = file.read()
+    print(post_ids)
+    # 每日签到一次
+    sign_result = sky_sign()
+    post_like_result = post_like(5, post_ids)
+    user_point_result = user_info()
+    wx_msg = f"'\n'{post_like_result}  + '\n'{sign_result} + '\n' {user_point_result} "
+    wx_com_bot = WxComBot(corp_id, corp_secret)
+    wx_com_bot.send_msg_text('1000002', "sky-color-sign" + wx_msg, corp_user)
 
 
 if __name__ == '__main__':
