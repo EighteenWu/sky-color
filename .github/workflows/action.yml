@@ -31,7 +31,7 @@ jobs:
           appid: ${{ secrets.APPID }}
           sign: ${{ secrets.SIGN }}
           corp_id: ${{ secrets.COPR_ID }}
-          corp_secret: ${{ secrets.SECRET }}
+          corp_secret: ${{ secrets.CORP_SECRET }}
           corp_user: ${{ secrets.USER }}
         run: |
           python3 ./main.py
